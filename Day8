@@ -31,6 +31,25 @@ def decrypt(text, shift):
     #shift = 5
     #cipher_text = "mjqqt"
     #print output: "The encoded text is mjqqt"
+    
+    #TODO-1: Combine the encrypt() and decrypt() functions into a single function called caesar(). 
+
+def caesar(text, shift, direction):
+  cipher_text = ""
+  if direction == "decode":
+      shift *= -1
+  for letter in text:
+    position = alphabet.index(letter)
+    new_position = position + shift
+    cipher_text += alphabet[new_position]
+  print(f"The {direction}d text is {cipher_text}")  
+
+
+caesar(text, shift, direction)
+# if direction == "encode":
+#   print(f"The encoded text is {new_text}")
+# else:
+#   print(f"The decoded text is {new_text}")
 
     ##HINT: How do you get the index of an item in a list:
     #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
